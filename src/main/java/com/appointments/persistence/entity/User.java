@@ -2,6 +2,8 @@ package com.appointments.persistence.entity;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "users")
 public class User {
@@ -13,6 +15,8 @@ public class User {
     private String password;
     private String email;
     private boolean isActive;
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<Customer> customers;
 
     public Long getId() {
         return id;
