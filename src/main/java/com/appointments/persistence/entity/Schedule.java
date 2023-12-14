@@ -12,8 +12,12 @@ public class Schedule {
 
     @Id
     private Long id;
-    private LocalDate time_from;
-    private LocalDate time_to;
+
+    @Column(name = "time_from")
+    private LocalDate timeFrom;
+
+    @Column(name = "time_to")
+    private LocalDate timeTo;
     private String plan;
     private String actual;
 
@@ -28,12 +32,12 @@ public class Schedule {
         this.id = id;
     }
 
-    public LocalDate getTime_from() {
-        return time_from;
+    public LocalDate getTimeFrom() {
+        return timeFrom;
     }
 
-    public void setTime_from(LocalDate time_from) {
-        this.time_from = time_from;
+    public void setTimeFrom(LocalDate timeFrom) {
+        this.timeFrom = timeFrom;
     }
 
     public LocalDate getTime_to() {

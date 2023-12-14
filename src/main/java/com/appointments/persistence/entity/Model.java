@@ -9,7 +9,9 @@ import java.util.List;
 public class Model {
     @Id
     private Long id;
-    private String model_name;
+
+    @Column(name = "model_name")
+    private String modelName;
 
     @OneToMany(mappedBy = "model", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Vehicle> vehicles;
@@ -26,12 +28,12 @@ public class Model {
         this.id = id;
     }
 
-    public String getModel_name() {
-        return model_name;
+    public String getModelName() {
+        return modelName;
     }
 
-    public void setModel_name(String model_name) {
-        this.model_name = model_name;
+    public void setModelName(String modelName) {
+        this.modelName = modelName;
     }
 
     public List<Vehicle> getVehicles() {

@@ -8,7 +8,8 @@ public class Contact {
     @Id
     private Long id;
 
-    private String contact_details;
+    @Column(name = "contact_details")
+    private String contactDetails;
     @ManyToOne
     @JoinColumn(name = "schedule_id", referencedColumnName = "id")
     private Schedule schedule;
@@ -27,12 +28,12 @@ public class Contact {
         this.id = id;
     }
 
-    public String getContact_details() {
-        return contact_details;
+    public String getContactDetails() {
+        return contactDetails;
     }
 
-    public void setContact_details(String contact_details) {
-        this.contact_details = contact_details;
+    public void setContactDetails(String contactDetails) {
+        this.contactDetails = contactDetails;
     }
 
     public Schedule getSchedule() {

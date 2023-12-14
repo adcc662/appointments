@@ -10,7 +10,9 @@ public class ContactType {
 
     @Id
     private Long id;
-    private String type_name;
+
+    @Column(name = "type_name")
+    private String typeName;
 
     @OneToMany(mappedBy = "contactType", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Contact> contacts;
@@ -23,12 +25,12 @@ public class ContactType {
         this.id = id;
     }
 
-    public String getType_name() {
-        return type_name;
+    public String getTypeName() {
+        return typeName;
     }
 
-    public void setType_name(String type_name) {
-        this.type_name = type_name;
+    public void setTypeName(String typeName) {
+        this.typeName = typeName;
     }
 
     public List<Contact> getContacts() {
